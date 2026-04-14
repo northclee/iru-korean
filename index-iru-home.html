@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<!-- index-iru-home.html — Iru Korean Homepage -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO ═══ -->
+<title>Iru Korean 이루 — Learn Korean Beautifully | Grammar, Vocabulary & TOPIK Prep</title>
+<meta name="description" content="Learn Korean beautifully with Iru Korean. 1,800+ lessons covering grammar, vocabulary, travel Korean, speaking, and TOPIK prep. Built in Seoul — free Travel Korean preview.">
+<meta name="keywords" content="learn Korean, Korean lessons, Korean grammar, Korean vocabulary, TOPIK prep, travel Korean, Seoul, Korean language, 한국어 배우기">
+<meta name="author" content="Iru Korean">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://irukorean.com/">
+<link rel="dns-prefetch" href="https://wttr.in">
+<link rel="dns-prefetch" href="https://api.open-meteo.com">
+<meta name="theme-color" content="#0a0e35">
+
+<!-- ═══ OPEN GRAPH (Facebook, WhatsApp, iMessage) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://irukorean.com/">
+<meta property="og:title" content="Iru Korean — Learn Korean Beautifully">
+<meta property="og:description" content="1,800+ Korean lessons — grammar, vocabulary, travel phrases, and TOPIK prep. Built with love from Seoul. Free Travel Korean preview.">
+<meta property="og:image" content="https://irukorean.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:site_name" content="Iru Korean">
+
+<!-- ═══ TWITTER / X CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Iru Korean — Learn Korean Beautifully">
+<meta name="twitter:description" content="1,800+ Korean lessons. Grammar, vocabulary, travel phrases, TOPIK prep — built from Seoul.">
+<meta name="twitter:image" content="https://irukorean.com/og-image.jpg">
+
+<!-- ═══ STRUCTURED DATA — Course + Organization ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Iru Korean",
+      "alternateName": "이루 코리안",
+      "url": "https://irukorean.com",
+      "description": "Korean language learning platform built in Seoul. 1,800+ lessons across grammar, vocabulary, speaking, travel Korean, and TOPIK prep.",
+      "foundingLocation": {"@type":"Place","name":"Seoul, South Korea"},
+      "inLanguage": ["en","ko"]
+    },
+    {
+      "@type": "Course",
+      "name": "Iru Korean — Complete Korean Language Course",
+      "description": "Comprehensive Korean learning covering basics, grammar, vocabulary, speaking, travel Korean, advanced Korean, and TOPIK preparation.",
+      "provider": {"@type":"Organization","name":"Iru Korean","url":"https://irukorean.com"},
+      "courseMode": "online",
+      "educationalLevel": "Beginner to Advanced",
+      "teaches": "Korean language",
+      "inLanguage": "ko",
+      "offers": {
+        "@type": "Offer",
+        "category": "Subscription",
+        "url": "https://irukorean.com/#pricing"
+      },
+      "hasCourseInstance": [
+        {"@type":"CourseInstance","name":"Korean Basics","courseMode":"online"},
+        {"@type":"CourseInstance","name":"Travel Korean","courseMode":"online"},
+        {"@type":"CourseInstance","name":"TOPIK Prep","courseMode":"online"}
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ═══ PERFORMANCE ═══ -->
+<!-- Preconnect to font origins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload critical font subset — Cormorant 600 for the hero title renders first -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,600;1,600&family=Jost:wght@300;400;500&family=DM+Mono:wght@300;400&family=Noto+Sans+KR:wght@300;400;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&family=DM+Mono:wght@300;400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink-abyss:#00010f;--ink-deep:#06082b;--ink-dark:#0a0e35;--ink-navy:#222950;
+  --ink-mid:#363e63;--slate:#596183;--dust:#838aa6;--mist:#a4aac1;
+  --fog:#bfc4d5;--veil:#e0e3ed;--paper:#eceff5;--snow:#f6f8fc;
+  --pale-sky:#cae1fa;--pale-sky2:#dbeef8;--pale-sky3:#eef6fd;
+  --rule:rgba(164,170,193,0.28);--rule2:rgba(164,170,193,0.14);--gold:#c9a96e;
+  --warm:#f5f0e8;--warm2:#ece6da;--warm-ink:#3a2e20;--warm-mid:#7a6a55;--warm-dust:#a89880;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--snow);color:var(--ink-navy);overflow-x:hidden;cursor:none}
+.cur,.cur-ring{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);border-radius:50%}
+.cur{width:7px;height:7px;background:var(--ink-navy)}
+.cur-ring{width:30px;height:30px;border:1px solid var(--slate);z-index:9998;transition:width .3s cubic-bezier(.34,1.56,.64,1),height .3s cubic-bezier(.34,1.56,.64,1),border-color .2s}
+body:has(a:hover) .cur-ring,body:has([onclick]:hover) .cur-ring,body:has(button:hover) .cur-ring{width:44px;height:44px;border-color:var(--ink-dark)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5vw;height:52px;display:flex;align-items:center;justify-content:space-between;background:rgba(246,248,252,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule2)}
+.nav-logo{font-family:'Cormorant',serif;font-weight:600;font-size:20px;color:var(--ink-dark);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.nav-kr{font-family:'Noto Sans KR',sans-serif;font-weight:300;font-size:12px;color:var(--dust);border-left:1px solid var(--rule);padding-left:10px;letter-spacing:.04em}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:13px;font-weight:300;color:var(--slate);text-decoration:none;letter-spacing:.02em;position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--ink-navy);transform:scaleX(0);transform-origin:left;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+.nav-links a:hover{color:var(--ink-navy)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-login{font-size:12px !important;font-family:'DM Mono',monospace !important;letter-spacing:.06em !important;color:var(--ink-dark) !important;border:1px solid var(--rule) !important;padding:6px 16px;border-radius:4px;transition:background .2s !important}
+.nav-login::after{display:none !important}
+.nav-login:hover{background:var(--veil) !important}
+
+/* PAGE */
+.page{position:relative;z-index:1;width:100%;padding:0 5vw}
+
+/* ══════════════════════════════════════════
+   WEATHER-REACTIVE GHIBLI SKY HERO
+══════════════════════════════════════════ */
+.cover{display:none}
+
+.hero{
+  position:relative;
+  height:500px;
+  overflow:hidden;
+  margin-top:52px;
+  transition:background 2s ease;
+  /* Default: serene lavender-blue */
+  background:linear-gradient(180deg,
+    #bccde8 0%,#cad8ee 18%,#d8e5f3 35%,
+    #e2ecf7 55%,#ecf2fb 72%,#f3f7fd 88%,#f8fafe 100%
+  );
+}
+/* Weather state classes applied via JS */
+.hero.wx-cloudy{background:linear-gradient(180deg,#9aaabb 0%,#b3c0cc 25%,#c4ced8 50%,#d5dde5 75%,#e4eaef 100%)}
+.hero.wx-rain  {background:linear-gradient(180deg,#7a8e9a 0%,#8d9eaa 25%,#9faeb9 50%,#b3bfc9 75%,#c8d2da 100%)}
+.hero.wx-snow  {background:linear-gradient(180deg,#c5cfd8 0%,#d4dce3 30%,#e2e8ed 60%,#edf1f5 85%,#f5f7f9 100%)}
+.hero.wx-night {background:linear-gradient(180deg,#0d1b2e 0%,#1a2d4a 30%,#243d5e 60%,#304e6e 85%,#3d5e7c 100%)}
+
+.hero-atm{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 35% at 20% 15%,rgba(220,232,248,0.45) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 25% at 80% 8%,rgba(208,224,244,0.35) 0%,transparent 55%)}
+
+/* ── SVG Cloud layer ── */
+.cloud-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+/* Animated cloud groups */
+.svg-cloud{
+  position:absolute;
+  will-change:transform;
+  pointer-events:none;
+}
+/* Rain overlay */
+.rain-overlay{
+  position:absolute;inset:0;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 1.5s;
+}
+.hero.wx-rain .rain-overlay{opacity:1}
+.rain-canvas{position:absolute;inset:0;width:100%;height:100%}
+
+/* Snow overlay */
+.snow-overlay{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.5s}
+.hero.wx-snow .snow-overlay{opacity:1}
+
+/* Night stars */
+.stars-overlay{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 2s}
+.hero.wx-night .stars-overlay{opacity:1}
+
+/* Banner text panel */
+.hero-panel{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:0 5vw 36px;
+  background:linear-gradient(to bottom,
+    transparent 0%,
+    rgba(240,246,253,0.35) 22%,
+    rgba(246,250,255,0.75) 52%,
+    rgba(255,255,255,1.0)  100%
+  );
+  z-index:1;
+}
+.hero-panel>*{position:relative;z-index:2}
+.hero.wx-night .hero-panel{
+  background:linear-gradient(to bottom,
+    transparent 0%,
+    rgba(13,27,46,0.3) 28%,
+    rgba(13,27,46,0.75) 60%,
+    rgba(13,27,46,0.95) 100%
+  );
+}
+.hero.wx-night .doc-title{color:#f0f6ff}
+.hero.wx-night .doc-title em{color:#8ab4da}
+.hero.wx-night .doc-kr{color:rgba(180,210,240,0.55)}
+.hero.wx-night .doc-desc{color:rgba(200,220,240,0.8)}
+.hero.wx-night .hero-eyebrow{color:rgba(180,210,240,0.6)}
+.hero.wx-night .doc-meta{color:rgba(160,190,220,0.45)}
+.hero.wx-night .dot{background:rgba(160,190,220,0.3)}
+
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:12px;display:inline-flex;align-items:center;gap:8px}
+.hero-eyebrow::before{content:'';width:18px;height:1px;background:currentColor;opacity:0.5}
+
+/* Namsan Tower — absolute, large, ghostly, behind text panel */
+.namsan-wrap{
+  position:absolute;
+  bottom:0;
+  left:200px;           /* sits between "Master" and "Korean" visually */
+  width:72px;
+  z-index:0;            /* below hero-panel gradient + text */
+  pointer-events:none;
+}
+.namsan-svg{
+  display:block;
+  width:72px;
+  height:auto;
+  color:var(--ink-dark);
+  opacity:0.13;
+}
+.hero.wx-night .namsan-svg{color:#8ab4da;opacity:0.18}
+
+.doc-title{font-family:'Cormorant',serif;font-size:clamp(38px,5.5vw,72px);font-weight:600;line-height:0.96;letter-spacing:-.03em;color:var(--ink-dark);margin-bottom:8px;position:relative;z-index:1}
+.doc-title em{font-style:italic;color:var(--ink-mid)}
+.doc-kr{font-family:'Noto Sans KR',sans-serif;font-weight:300;font-size:clamp(13px,1.8vw,18px);color:var(--dust);letter-spacing:.06em;margin-bottom:14px;display:block}
+.doc-desc{font-size:14px;font-weight:300;color:var(--slate);line-height:1.72;max-width:500px;margin-bottom:18px;letter-spacing:.01em}
+.doc-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:10px;color:var(--dust);letter-spacing:.06em;margin-bottom:20px}
+.doc-meta-item{display:flex;align-items:center;gap:6px}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--fog)}
+.doc-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.act-primary{font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--ink-dark);padding:9px 24px;border-radius:4px;text-decoration:none;transition:background .2s,transform .15s;display:inline-block}
+.act-primary:hover{background:var(--ink-abyss);transform:translateY(-1px)}
+.act-ghost{font-family:'DM Mono',monospace;font-size:11px;font-weight:300;letter-spacing:.06em;color:var(--slate);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--rule);padding-bottom:1px;transition:color .2s,border-color .2s}
+.act-ghost:hover{color:var(--ink-navy);border-color:var(--mist)}
+
+/* ── Weather widget — bold, prominent card ── */
+.wx-badge{
+  position:absolute;top:18px;right:22px;
+  display:flex;align-items:center;gap:12px;
+  background:rgba(8,18,42,0.72);
+  backdrop-filter:blur(16px);
+  padding:11px 18px 11px 14px;border-radius:14px;
+  border:1px solid rgba(202,225,250,0.22);
+  box-shadow:0 4px 20px rgba(0,10,40,0.28),inset 0 1px 0 rgba(255,255,255,0.08);
+  transition:background 1s;
+  min-width:160px;
+}
+.hero.wx-rain   .wx-badge{background:rgba(30,50,70,0.72);border-color:rgba(160,195,225,0.2)}
+.hero.wx-cloudy .wx-badge{background:rgba(40,55,75,0.7);border-color:rgba(180,200,220,0.18)}
+/* Default clear sky — keep dark for contrast */
+.wx-badge-icon{font-size:26px;line-height:1;flex-shrink:0}
+.wx-badge-body{display:flex;flex-direction:column;gap:2px}
+.wx-badge-temp{
+  font-family:'Cormorant',serif;
+  font-size:22px;font-weight:600;line-height:1;
+  color:#fff;letter-spacing:-.02em;
+}
+.wx-badge-desc{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;
+  color:rgba(202,225,250,0.75);text-transform:uppercase;
+}
+.wx-badge-sub{
+  display:flex;gap:8px;
+  font-family:'DM Mono',monospace;font-size:8px;
+  color:rgba(180,205,235,0.5);letter-spacing:.04em;
+  margin-top:1px;
+}
+.wx-badge-city{
+  font-family:'DM Mono',monospace;font-size:8px;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(202,225,250,0.35);
+  margin-top:3px;
+  display:flex;align-items:center;gap:5px;
+}
+.wx-badge-city::before{
+  content:'';width:8px;height:1px;
+  background:rgba(202,225,250,0.2);
+  flex-shrink:0;
+}
+
+
+/* Plain neutral line between sky and lessons */
+
+
+/* ══════════════════════════════════════════
+   LESSONS — navy ink, magazine atmosphere
+══════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   LESSONS — white-top to indigo-blue gradient
+══════════════════════════════════════════ */
+.lessons-sec{
+  padding:0;
+  margin:0 -5vw;
+  padding:0 5vw 0;
+  position:relative;
+  background:linear-gradient(180deg,
+    #ffffff   0%,
+    #ffffff   4%,
+    #fafcff   9%,
+    #f4f8fd  16%,
+    #ecf3fa  26%,
+    #e2ecf7  38%,
+    #d7e6f4  52%,
+    #ccdfef  66%,
+    #c3d9ec  80%,
+    #bdd5ea  92%,
+    #b8d1e8 100%
+  );
+}
+/* Subtle dot grid overlay */
+.lessons-sec::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle,rgba(60,90,160,0.09) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.lessons-sec::after{content:none}
+.lessons-sec .lessons-hd,.lessons-sec .lessons-panel-wrap{position:relative;z-index:1}
+.lessons-hd{padding-top:40px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:20px;flex-wrap:wrap}
+.lessons-hd-left{}
+.chapter{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.chapter::before{content:'';width:16px;height:1px;background:var(--slate);opacity:0.5}
+/* ── Title: elegant sparkle glow ── */
+@keyframes sparkleGlow{
+  0%,100%{ text-shadow:none; opacity:1; }
+  20%    { text-shadow: 1px -1px 12px rgba(202,225,250,0.55),
+                        -2px 1px 18px rgba(202,225,250,0.3); }
+  40%    { text-shadow: -1px 2px 8px rgba(202,225,250,0.25); }
+  60%    { text-shadow: 2px 0px 20px rgba(202,225,250,0.5),
+                         0px -2px 14px rgba(202,225,250,0.3); }
+  80%    { text-shadow: -1px -1px 10px rgba(202,225,250,0.2); }
+}
+.lessons-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(26px,3.5vw,44px);
+  font-weight:600;
+  line-height:1.25;       /* taller so descenders (j, y) never clip */
+  letter-spacing:-.02em;
+  color:var(--ink-dark);
+  animation:sparkleGlow 7s ease-in-out infinite;
+  display:block;
+  padding-bottom:4px;     /* extra room for descenders */
+}
+.lessons-title em{
+  font-style:italic;
+  color:var(--ink-mid);
+}
+.lessons-note{max-width:200px;font-size:13px;font-weight:300;color:var(--slate);line-height:1.7;letter-spacing:.01em;padding-bottom:2px;text-align:right}
+.lessons-panel-wrap{padding:20px 0 52px;position:relative;z-index:1}
+/* Smooth blend into shop */
+.lessons-sec-foot{height:110px;margin:0 -5vw;background:linear-gradient(to bottom,#b8d1e8 0%,#d4e7f5 30%,#edf5fb 60%,#f8fcff 82%,#ffffff 100%)}
+
+/* ══ SHOP CAROUSEL — preppy ribbon band ══ */
+.shelf-sec{
+  padding:36px 0 40px;
+  position:relative;
+}
+/* Ribbon — vivid navy + emerald, sharp diagonal grosgrain */
+.shelf-ribbon{
+  position:absolute;
+  top:0;bottom:0;left:-5vw;right:-5vw;
+  z-index:0;
+  /* Vivid alternating stripes: deep royal navy + rich emerald */
+  background:repeating-linear-gradient(
+    -50deg,
+    #0a1a50   0px,  #0a1a50  14px,
+    #1a6e42  14px, #1a6e42  26px,
+    #0a1a50  26px,  #0a1a50  40px,
+    #22884e  40px, #22884e  50px,
+    #0c2060  50px, #0c2060  64px,
+    #1a6e42  64px, #1a6e42  74px
+  );
+  /* Clean dark edge lines — like ribbon selvedge */
+  box-shadow:
+    inset 0  7px 0 #04091e,
+    inset 0 -7px 0 #04091e,
+    0 3px 14px rgba(4,9,30,0.3);
+}
+/* Make header + content sit above ribbon */
+.shelf-hd,.shop-scroll-wrap{position:relative;z-index:1}
+
+/* Scroll container */
+.shop-scroll-wrap{position:relative}
+.shop-row{
+  display:flex;gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:6px;
+}
+.shop-row::-webkit-scrollbar{display:none}
+.shelf-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.shelf-hd-lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(220,240,220,0.9);display:flex;align-items:center;gap:8px}
+.shelf-hd-lbl::before{content:'';width:16px;height:1px;background:rgba(180,230,180,0.5)}
+.shelf-hd-all{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;color:rgba(180,230,200,0.75);text-decoration:none;border-bottom:1px solid rgba(180,230,200,0.25);padding-bottom:1px;transition:color .15s}
+.shelf-hd-all:hover{color:#fff}
+
+/* Cards on tape bg — slight paper lift */
+.shop-card{
+  flex:0 0 calc(25% - 9px);
+  min-width:220px;
+  display:flex;flex-direction:column;
+  text-decoration:none;cursor:pointer;
+  scroll-snap-align:start;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+}
+.shop-card:hover .shop-img-wrap{border-color:var(--mist)}
+.shop-card:hover .shop-img-wrap img{transform:scale(1.04)}
+.shop-card:hover .shop-card-name{color:#b8f0c8}
+.shop-img-wrap{
+  width:100%;aspect-ratio:16/6;
+  border-radius:8px;overflow:hidden;position:relative;
+  background:var(--ink-dark);border:1px solid rgba(180,160,110,0.25);
+  transition:border-color .2s;display:flex;align-items:center;justify-content:center;
+  margin-bottom:8px;
+}
+.shop-img-wrap img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .35s ease;display:none}
+.shop-img-wrap.loaded img{display:block}
+.shop-upload-zone{position:absolute;inset:0;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;background:var(--ink-dark)}
+.shop-img-wrap.loaded .shop-upload-zone{opacity:0}
+.shop-img-wrap.loaded:hover .shop-upload-zone{opacity:1;background:rgba(10,14,53,.55)}
+.shop-upload-icon{width:22px;height:22px;border-radius:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(255,255,255,.7)}
+.shop-upload-hint{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.06em;color:rgba(255,255,255,.5)}
+.shop-img-wrap.loaded:hover .shop-upload-hint{color:rgba(255,255,255,.85)}
+.shop-file-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.shop-placeholder-kr{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:28px;line-height:1;color:rgba(255,255,255,.07);user-select:none;pointer-events:none}
+.shop-img-wrap.loaded .shop-placeholder-kr{display:none}
+.shop-card-name{font-family:'Cormorant',serif;font-size:13px;font-weight:600;color:#fff;line-height:1.25;letter-spacing:-.01em;margin-bottom:2px;transition:color .15s}
+.shop-card:hover .shop-card-name{color:var(--ink-navy)}
+.shop-card-tag{font-family:'DM Mono',monospace;font-size:9px;color:rgba(190,230,210,0.75);letter-spacing:.04em}
+
+/* Scroll arrows */
+.shop-scroll-wrap{position:relative}
+.scroll-arr{
+  position:absolute;top:50%;transform:translateY(-70%);
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(15,40,30,0.7);border:1px solid rgba(100,200,140,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;cursor:pointer;color:rgba(200,240,210,0.9);
+  transition:box-shadow .15s,color .15s;z-index:3;
+  box-shadow:0 2px 8px rgba(0,0,0,0.25);
+}
+.scroll-arr:hover{color:#fff;box-shadow:0 4px 14px rgba(20,120,60,0.3)}
+.scroll-arr.left{left:-14px}
+.scroll-arr.right{right:-14px}
+
+.tab-panel{border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:#fff;margin-bottom:0}
+
+/* 7-tab row */
+.tab-row{display:grid;grid-template-columns:repeat(7,1fr);background:var(--snow);border-bottom:1px solid var(--rule)}
+.tab{padding:16px 10px 14px;border-right:1px solid var(--rule);cursor:pointer;position:relative;transition:background .2s;display:flex;flex-direction:column;align-items:flex-start;gap:3px;border-top:2px solid transparent;user-select:none}
+.tab:last-child{border-right:none}
+.tab:hover{background:var(--paper)}
+.tab.active{background:#fff;border-bottom:1px solid #fff;margin-bottom:-1px;z-index:2}
+.tab[data-sec="basics"].active  {border-top-color:#596183}
+.tab[data-sec="travel"].active  {border-top-color:#3d6a8a}
+.tab[data-sec="grammar"].active {border-top-color:#363e63}
+.tab[data-sec="speaking"].active{border-top-color:#0a0e35}
+.tab[data-sec="vocab"].active   {border-top-color:#838aa6}
+.tab[data-sec="advanced"].active{border-top-color:#06082b}
+.tab[data-sec="topik"].active   {border-top-color:#222950}
+.tab-kr{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:20px;line-height:1;color:rgba(10,14,53,.06);position:absolute;top:8px;right:8px;pointer-events:none;user-select:none}
+.tab.active .tab-kr{color:rgba(10,14,53,.09)}
+.tab-emoji{font-size:18px;line-height:1;margin-bottom:1px}
+.tab-name{font-family:'Cormorant',serif;font-size:13px;font-weight:600;color:var(--ink-dark);line-height:1.2;letter-spacing:-.01em}
+.tab-count{font-family:'DM Mono',monospace;font-size:8px;color:var(--dust);letter-spacing:.06em}
+
+.tab-content{background:#fff;position:relative;z-index:1;border-top:1px solid var(--rule)}
+.content-hd{padding:16px 22px 13px;border-bottom:1px solid var(--rule2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--snow);position:relative;overflow:hidden}
+.content-hd::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(164,170,193,.18) 27px,rgba(164,170,193,.18) 28px);pointer-events:none}
+.content-hd-left{display:flex;align-items:center;gap:10px;position:relative}
+.content-title{font-family:'Cormorant',serif;font-size:19px;font-weight:600;color:var(--ink-dark);letter-spacing:-.01em}
+.content-total{font-family:'DM Mono',monospace;font-size:10px;color:var(--dust);letter-spacing:.06em}
+.ftabs{display:flex;gap:4px;flex-wrap:wrap;position:relative}
+.ftab{padding:4px 11px;border-radius:3px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid var(--rule);background:transparent;color:var(--slate);cursor:pointer;transition:all .15s}
+.ftab:hover{border-color:var(--mist);color:var(--ink-navy)}
+.ftab.on{background:var(--ink-dark);color:var(--paper);border-color:var(--ink-dark)}
+.lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:var(--rule2);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--fog) transparent}
+.lesson-grid::-webkit-scrollbar{width:4px}
+.lesson-grid::-webkit-scrollbar-thumb{background:var(--fog);border-radius:2px}
+.lcard{background:#fff;padding:16px 20px;display:flex;flex-direction:column;gap:6px;transition:background .15s;text-decoration:none;position:relative;overflow:hidden}
+.lcard:hover{background:var(--snow)}
+.lcard::before{content:'';position:absolute;width:36px;height:36px;border-radius:50%;background:radial-gradient(circle,rgba(34,41,80,.06) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%) scale(0);transition:transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+.lcard:hover::before{transform:translate(-50%,-50%) scale(7)}
+.l-num{font-family:'DM Mono',monospace;font-size:9px;color:var(--mist);letter-spacing:.1em;position:relative}
+.l-title{font-family:'Cormorant',serif;font-size:15px;font-weight:600;color:var(--ink-dark);line-height:1.25;letter-spacing:-.01em;position:relative}
+.l-desc{font-size:12px;font-weight:300;color:var(--slate);line-height:1.6;letter-spacing:.01em;flex:1;position:relative}
+.l-foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px;position:relative}
+.lvl{font-family:'DM Mono',monospace;font-size:9px;padding:3px 8px;border-radius:3px;letter-spacing:.06em}
+.lvl-b{background:var(--paper);color:var(--slate)}
+.lvl-i{background:rgba(34,41,80,.08);color:var(--ink-mid)}
+.lvl-a{background:rgba(10,14,53,.12);color:var(--ink-dark)}
+.lvl-t{background:rgba(6,8,43,.1);color:var(--ink-navy)}
+.l-lock{width:20px;height:20px;border-radius:3px;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--mist)}
+.panel-welcome{padding:36px 28px;font-family:'Cormorant',serif;color:var(--dust);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:180px;text-align:center}
+.panel-welcome-title{font-size:20px;font-weight:400;font-style:italic;margin-bottom:6px}
+.panel-welcome-sub{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--mist)}
+.content-ft{padding:14px 22px;border-top:1px solid var(--rule2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--snow)}
+.content-ft-text{font-size:13px;font-weight:300;color:var(--slate);letter-spacing:.01em}
+.content-ft-text strong{color:var(--ink-dark);font-weight:500}
+
+
+/* ═══ PRACTICE HUB — magazine spread ═══ */
+.prac-sec{
+  margin:28px 0 0;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--rule);
+}
+
+/* Magazine masthead bar */
+.prac-masthead{
+  background:var(--ink-dark);
+  padding:10px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.prac-masthead-left{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(202,225,250,.92);
+  font-weight:400;
+}
+.prac-masthead-right{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;
+  color:rgba(202,225,250,.65);
+}
+.prac-masthead-title{
+  font-family:'Cormorant',serif;font-size:13px;font-weight:400;
+  font-style:italic;color:var(--pale-sky);letter-spacing:.05em;
+}
+
+/* Full-width ruled line in pale sky */
+.prac-rule{height:3px;background:var(--pale-sky)}
+
+/* Magazine body — two-column asymmetric */
+.prac-body{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  min-height:360px;
+}
+
+/* Left: editorial column with pull quote */
+.prac-left{
+  border-right:1px solid var(--rule);
+  padding:36px 32px;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.prac-left::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    transparent,transparent 29px,rgba(164,170,193,.12) 29px,rgba(164,170,193,.12) 30px
+  );pointer-events:none;
+}
+.prac-issue{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--dust);margin-bottom:24px;position:relative;
+}
+/* Big pull quote */
+.prac-pullquote{
+  font-family:'Cormorant',serif;
+  font-size:clamp(30px,3.5vw,46px);
+  font-weight:600;line-height:1.02;
+  letter-spacing:-.025em;
+  color:var(--ink-dark);
+  border-left:4px solid var(--pale-sky);
+  padding-left:18px;
+  margin-bottom:24px;
+  position:relative;
+}
+.prac-pullquote em{font-style:italic;color:var(--slate)}
+.prac-pullquote-sub{
+  font-size:14px;font-weight:300;color:var(--slate);
+  line-height:1.7;letter-spacing:.01em;
+  padding-left:22px;margin-bottom:32px;position:relative;
+}
+/* Stats stacked vertically */
+.prac-stats-v{display:flex;flex-direction:column;gap:0;margin-top:auto;position:relative}
+.pstat-v{
+  display:flex;align-items:baseline;gap:10px;
+  padding:10px 0;
+  border-top:1px solid var(--rule2);
+}
+.pstat-v:last-child{border-bottom:1px solid var(--rule2)}
+.pstat-n{
+  font-family:'Cormorant',serif;
+  font-size:28px;font-weight:600;line-height:1;
+  letter-spacing:-.03em;color:var(--ink-dark);
+  min-width:56px;
+}
+.pstat-n span{
+  display:inline-block;
+  background:var(--pale-sky);
+  border-radius:4px;
+  padding:2px 8px;
+  font-size:22px;
+}
+.pstat-l{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--dust);
+}
+
+/* Right: three editorial cards in newspaper column layout */
+.prac-right{
+  display:grid;
+  grid-template-rows:1fr 1fr 1fr;
+}
+.pc{
+  background:#fff;
+  padding:24px 28px;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:16px;
+  align-items:start;
+  transition:background .15s;
+  position:relative;overflow:hidden;
+}
+.pc:last-child{border-bottom:none}
+.pc:hover{background:var(--pale-sky3)}
+.pc::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    transparent,transparent 27px,rgba(164,170,193,.1) 27px,rgba(164,170,193,.1) 28px
+  );pointer-events:none;
+}
+.pc-left{position:relative}
+.pc-eyebrow{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dust);margin-bottom:8px;position:relative;
+}
+.pc-title{
+  font-family:'Cormorant',serif;font-size:19px;font-weight:600;
+  color:var(--ink-dark);line-height:1.2;letter-spacing:-.015em;
+  margin-bottom:8px;position:relative;
+}
+.pc-desc{
+  font-size:13px;font-weight:300;color:var(--slate);
+  line-height:1.6;letter-spacing:.01em;position:relative;
+}
+.pc-right{display:flex;flex-direction:column;gap:4px;align-items:flex-end;position:relative;padding-top:2px}
+.pc-badge{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;padding:3px 9px;border-radius:3px;white-space:nowrap}
+.b-orig{background:rgba(201,169,110,.2);color:#6b4e08}
+.b-mem {background:var(--pale-sky2);color:var(--ink-navy)}
+.b-free{background:rgba(30,130,70,.1);color:#1a5030}
+.pc-tags{display:flex;flex-direction:column;gap:3px;align-items:flex-end}
+.pc-tag{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.04em;
+  padding:2px 7px;border-radius:3px;
+  background:var(--paper);color:var(--mist);white-space:nowrap;
+}
+
+/* Bottom CTA bar */
+.prac-cta-bar{
+  border-top:1px solid var(--rule);
+  padding:14px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--pale-sky3);
+}
+.prac-cta-bar-text{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;
+  color:var(--ink-mid);
+}
+.prac-cta{
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;
+  color:var(--ink-dark);text-decoration:none;
+  border:1px solid rgba(12,31,49,.2);
+  background:rgba(202,225,250,.4);
+  padding:8px 20px;border-radius:4px;
+  transition:background .2s,border-color .2s;
+  white-space:nowrap;
+}
+.prac-cta:hover{background:var(--pale-sky);border-color:rgba(12,31,49,.35)}
+
+/* ══════════════════════════════════════════
+   VISITING SEOUL — Seoul-at-dusk travel poster
+══════════════════════════════════════════ */
+.travel{
+  border-radius:16px;
+  margin:72px 0 60px;
+  overflow:hidden;
+  position:relative;
+  /* Han River at dusk — deep teal to warm indigo */
+  background:linear-gradient(135deg,
+    #0d2537 0%,
+    #0f3048 25%,
+    #143b58 50%,
+    #1a3f5c 70%,
+    #22476a 100%
+  );
+}
+/* City light glow at bottom */
+.travel::before{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:55%;
+  background:linear-gradient(to top,
+    rgba(255,185,80,0.08) 0%,
+    rgba(255,210,120,0.04) 40%,
+    transparent 100%
+  );pointer-events:none;
+}
+/* Seoul skyline silhouette via CSS — horizon glow */
+.travel::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,
+    transparent 0%,
+    rgba(255,185,80,0.25) 20%,
+    rgba(255,210,130,0.4) 50%,
+    rgba(255,185,80,0.25) 80%,
+    transparent 100%
+  );pointer-events:none;
+}
+/* Subtle star field */
+.travel-stars{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 18%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 45% 10%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 8%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 65% 20%, rgba(255,230,180,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 12%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 35%, rgba(255,255,255,0.3) 0%, transparent 100%);
+}
+.travel-inner{
+  position:relative;z-index:1;
+  padding:44px 48px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;
+}
+.travel-label{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(180,210,240,0.55);
+  margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.travel-label::before{content:'';width:14px;height:1px;background:rgba(255,185,80,0.5)}
+.travel-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(22px,3.5vw,42px);
+  font-weight:600;letter-spacing:-.02em;
+  color:#fff;line-height:1.06;
+  margin-bottom:8px;
+}
+.travel-title em{font-style:italic;color:rgba(255,200,120,0.9)}
+.travel-sub{
+  font-size:13px;font-weight:300;
+  color:rgba(180,210,240,0.65);
+  letter-spacing:.01em;line-height:1.65;
+}
+/* CTA in warm amber */
+.travel-cta{
+  font-family:'Jost',sans-serif;font-size:12px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-dark);
+  background:linear-gradient(135deg,#ffd07a 0%,#f4b84a 100%);
+  padding:11px 28px;border-radius:4px;text-decoration:none;
+  white-space:nowrap;position:relative;z-index:1;
+  transition:opacity .15s,transform .15s;display:inline-block;
+  box-shadow:0 4px 16px rgba(244,184,74,0.3);
+}
+.travel-cta:hover{opacity:.9;transform:translateY(-2px)}
+
+
+/* ══════════════════════════════════════════
+   NOTION WORKBOOK PROMO
+══════════════════════════════════════════ */
+.workbook-sec{
+  margin:56px 0 0;
+  border-radius:16px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--rule);
+  background:#fff;
+  position:relative;
+}
+.workbook-left{
+  padding:52px 48px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#0a0e35 0%,#162252 100%);
+}
+/* Ruled lines */
+.workbook-left::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    transparent,transparent 27px,rgba(202,225,250,0.05) 27px,rgba(202,225,250,0.05) 28px
+  );pointer-events:none;
+}
+/* Subtle Notion-style icon grid watermark */
+.workbook-left::after{
+  content:'N';
+  position:absolute;right:40px;top:50%;transform:translateY(-50%);
+  font-family:'Cormorant',serif;font-size:160px;font-weight:700;
+  color:rgba(202,225,250,0.04);line-height:1;
+  user-select:none;pointer-events:none;letter-spacing:-.04em;
+}
+.wb-eyebrow{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(202,225,250,0.5);margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;position:relative;
+}
+.wb-eyebrow::before{content:'';width:16px;height:1px;background:var(--pale-sky);opacity:0.5}
+.wb-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(26px,3.5vw,46px);
+  font-weight:600;line-height:1.04;letter-spacing:-.02em;
+  color:#fff;margin-bottom:14px;position:relative;
+}
+.wb-title em{font-style:italic;color:var(--pale-sky)}
+.wb-desc{
+  font-size:14px;font-weight:300;
+  color:rgba(202,225,250,0.7);line-height:1.72;
+  max-width:360px;margin-bottom:28px;position:relative;
+}
+.wb-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.08em;
+  color:var(--ink-dark);background:var(--pale-sky);
+  padding:11px 24px;border-radius:4px;text-decoration:none;
+  transition:opacity .15s,transform .15s;align-self:flex-start;
+  position:relative;
+}
+.wb-cta:hover{opacity:.88;transform:translateY(-1px)}
+
+/* Right side — feature list */
+.workbook-right{
+  padding:48px 44px;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:24px;
+}
+.wb-feature{
+  display:flex;align-items:flex-start;gap:16px;
+  padding-bottom:24px;border-bottom:1px solid var(--rule2);
+}
+.wb-feature:last-child{border-bottom:none;padding-bottom:0}
+.wb-icon{
+  width:36px;height:36px;border-radius:8px;flex-shrink:0;
+  background:var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;margin-top:2px;
+}
+.wb-feat-title{
+  font-family:'Cormorant',serif;font-size:17px;font-weight:600;
+  color:var(--ink-dark);margin-bottom:4px;letter-spacing:-.01em;
+}
+.wb-feat-desc{
+  font-size:13px;font-weight:300;color:var(--slate);
+  line-height:1.6;letter-spacing:.01em;
+}
+@media(max-width:960px){
+  .workbook-sec{grid-template-columns:1fr}
+  .workbook-left::after{display:none}
+}
+
+/* FOOTER */
+footer{border-top:1px solid var(--rule2);padding:28px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-logo{font-family:'Cormorant',serif;font-weight:600;font-size:17px;color:var(--ink-dark);display:flex;align-items:center;gap:8px;letter-spacing:.01em}
+.foot-kr{font-family:'Noto Sans KR',sans-serif;font-weight:300;font-size:11px;color:var(--dust);border-left:1px solid var(--rule);padding-left:8px}
+.foot-links{display:flex;gap:20px;list-style:none}
+.foot-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--mist);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--slate)}
+.foot-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--fog);letter-spacing:.04em}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.doc-header>*{opacity:0;animation:fadeUp .55s ease forwards}
+.page-icon{animation-delay:.05s}.doc-title{animation-delay:.14s}.doc-kr{animation-delay:.2s}
+.doc-desc{animation-delay:.26s}.doc-meta{animation-delay:.31s}.doc-actions{animation-delay:.36s}
+.tab-panel,.shelf-sec,.prac-sec{opacity:0;animation:fadeIn .5s ease forwards}
+.tab-panel{animation-delay:.12s}.shelf-sec{animation-delay:.18s}.prac-sec{animation-delay:.22s}
+
+@media(max-width:960px){
+  nav,.page{padding-left:20px;padding-right:20px}
+  .hero-panel{padding-left:20px;padding-right:20px}
+  .lessons-sec{margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
+  .tab-row{grid-template-columns:repeat(4,1fr)}
+  .tab:nth-child(5),.tab:nth-child(6),.tab:nth-child(7){border-top:1px solid var(--rule)}
+  .prac-body{grid-template-columns:1fr}
+  .prac-left{border-right:none;border-bottom:1px solid var(--rule)}
+}
+@media(max-width:600px){
+  body{cursor:auto}.cur,.cur-ring{display:none}
+  .nav-links{display:none}
+  .tab-row{grid-template-columns:repeat(3,1fr)}
+  .lesson-grid{grid-template-columns:1fr;max-height:380px}
+  .shop-row{grid-template-columns:1fr 1fr}
+  .prac-body{grid-template-columns:1fr}
+  .prac-stats-v{flex-direction:row;gap:12px}
+  .pc{grid-template-columns:1fr}
+  .travel-inner{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Iru Korean <span class="nav-kr">이루</span></a>
+  <ul class="nav-links">
+    <li><a href="#lessons">Materials</a></li>
+    <li><a href="#practice">Practice Hub</a></li>
+    <li><a href="#">Travel Korean</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">1:1 Korean Lessons</a></li>
+    <li><a href="#" class="nav-login">Member login</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="heroSky">
+  <div class="hero-atm"></div>
+
+  <!-- SVG Cloud layer — organic paths, animated -->
+  <div class="cloud-layer" id="cloudLayer"></div>
+
+  <!-- Rain overlay (shown when wx-rain) -->
+  <div class="rain-overlay">
+    <canvas class="rain-canvas" id="rainCanvas"></canvas>
+  </div>
+
+  <!-- Snow overlay -->
+  <div class="snow-overlay">
+    <canvas class="rain-canvas" id="snowCanvas"></canvas>
+  </div>
+
+  <!-- Night stars -->
+  <div class="stars-overlay"></div>
+
+  <!-- Seoul weather widget -->
+  <div class="wx-badge" id="wxBadge">
+    <div class="wx-badge-icon" id="wxIcon">☁️</div>
+    <div class="wx-badge-body">
+      <div class="wx-badge-temp" id="wxTemp">—°C</div>
+      <div class="wx-badge-desc" id="wxDesc">Seoul</div>
+      <div class="wx-badge-sub">
+        <span id="wxFeel"></span>
+        <span id="wxHumid"></span>
+      </div>
+      <div class="wx-badge-city">Seoul, Korea</div>
+    </div>
+  </div>
+
+  <!-- Namsan Tower — absolute, behind text, protrudes above panel into clouds -->
+  <div class="namsan-wrap">
+    <svg class="namsan-svg" viewBox="0 0 44 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Base hill -->
+      <ellipse cx="22" cy="202" rx="22" ry="8" fill="currentColor" opacity="0.6"/>
+      <!-- Tower legs -->
+      <path d="M 10,202 L 14,148 L 30,148 L 34,202 Z" fill="currentColor"/>
+      <!-- Observation deck base -->
+      <rect x="6" y="138" width="32" height="12" rx="3" fill="currentColor"/>
+      <!-- Observation deck top -->
+      <rect x="9" y="125" width="26" height="15" rx="2" fill="currentColor" opacity="0.92"/>
+      <!-- Upper shaft -->
+      <rect x="18" y="85" width="8" height="42" fill="currentColor"/>
+      <!-- Upper observation ring -->
+      <rect x="13" y="75" width="18" height="12" rx="2" fill="currentColor"/>
+      <!-- Slender mast -->
+      <rect x="20" y="32" width="4" height="45" fill="currentColor" opacity="0.9"/>
+      <!-- Signal ring -->
+      <ellipse cx="22" cy="50" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+      <!-- Antenna tip -->
+      <rect x="21" y="4" width="2" height="30" rx="1" fill="currentColor" opacity="0.8"/>
+      <circle cx="22" cy="4" r="2.5" fill="currentColor" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <!-- Banner text floats at the bottom of the sky -->
+  <div class="hero-panel">
+    <div class="hero-eyebrow" data-notion="hero-eyebrow">Seoul-built Korean workspace · 한국어 워크스페이스</div>
+    <h1 class="doc-title" data-notion="hero-title">Master <em>Korean Beautifully.</em></h1>
+    <span class="doc-kr" data-notion="hero-kr">한국어를 이루다 · Iru Korean</span>
+    <p class="doc-desc" data-notion="hero-desc">Grammar, vocabulary, travel phrases, and TOPIK prep — all in one organised workspace. Built with <span style="color:#e34">♥</span>, from Seoul.</p>
+    <div class="doc-meta">
+      <span class="doc-meta-item"><span class="dot"></span>1,800+ lessons</span>
+      <span class="doc-meta-item"><span class="dot"></span>6 sections</span>
+      <span class="doc-meta-item"><span class="dot"></span>All levels</span>
+      <span class="doc-meta-item"><span class="dot"></span>Seoul, 한국</span>
+    </div>
+    <div class="doc-actions">
+      <a href="#lessons" class="act-primary" data-notion="hero-cta-primary">Explore materials</a>
+      <a href="#" class="act-ghost" data-notion="hero-cta-ghost">Free Travel Korean ✈</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="page">
+
+  <!-- ═══ LESSON TABS — immediately under banner ═══ -->
+  <section class="lessons-sec" id="lessons">
+    <div class="lessons-hd">
+      <div class="lessons-hd-left">
+        <div class="chapter" data-notion="lessons-chapter">Chapter 01 — Learning materials</div>
+        <div class="lessons-title" data-notion="lessons-title">Choose your <em>Korean journey.</em></div>
+      </div>
+      <p class="lessons-note" data-notion="lessons-note">Select a section to browse lessons. 7 sections · 1,800+ lessons.</p>
+    </div>
+
+    <div class="lessons-panel-wrap">
+      <div class="tab-panel" id="tabPanel">
+        <div class="tab-row">
+          <div class="tab" data-sec="basics"   onclick="sel('basics',this)">  <span class="tab-kr">기</span><span class="tab-emoji">📚</span><span class="tab-name">Basics</span>    <span class="tab-count">300 lessons</span></div>
+          <div class="tab" data-sec="travel"   onclick="sel('travel',this)">  <span class="tab-kr">여</span><span class="tab-emoji">✈️</span><span class="tab-name">Travel</span>    <span class="tab-count">Free preview</span></div>
+          <div class="tab" data-sec="grammar"  onclick="sel('grammar',this)"> <span class="tab-kr">문</span><span class="tab-emoji">📖</span><span class="tab-name">Grammar</span>   <span class="tab-count">300 lessons</span></div>
+          <div class="tab" data-sec="speaking" onclick="sel('speaking',this)"><span class="tab-kr">말</span><span class="tab-emoji">🗣️</span><span class="tab-name">Speaking</span>  <span class="tab-count">300 lessons</span></div>
+          <div class="tab" data-sec="vocab"    onclick="sel('vocab',this)">   <span class="tab-kr">단</span><span class="tab-emoji">📝</span><span class="tab-name">Vocabulary</span><span class="tab-count">300 lessons</span></div>
+          <div class="tab" data-sec="advanced" onclick="sel('advanced',this)"><span class="tab-kr">고</span><span class="tab-emoji">🏋🏻‍♀️</span><span class="tab-name">Advanced</span>  <span class="tab-count">300 lessons</span></div>
+          <div class="tab" data-sec="topik"    onclick="sel('topik',this)">   <span class="tab-kr">시</span><span class="tab-emoji">📋</span><span class="tab-name">TOPIK</span>     <span class="tab-count">300 lessons</span></div>
+        </div>
+        <div class="tab-content" id="tabContent">
+          <div class="panel-welcome">
+            <div class="panel-welcome-title">Select a section above to browse lessons</div>
+            <div class="panel-welcome-sub">7 sections · 1,800+ lessons · all levels</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lessons-sec-foot"></div>
+  </section>
+
+  <!-- ═══ SHOP CAROUSEL — washi tape ═══ -->
+  <section class="shelf-sec">
+    <div class="shelf-ribbon"></div>
+    <div class="shelf-hd">
+      <div class="shelf-hd-lbl" data-notion="shop-label">Also from Iru</div>
+      <a href="#" class="shelf-hd-all">Shop all →</a>
+    </div>
+    <div class="shop-scroll-wrap">
+      <div class="scroll-arr left" onclick="scrollShop(-1)" title="Previous">‹</div>
+      <div class="shop-row" id="shopRow">
+
+        <div class="shop-card" onclick="triggerUpload('img-planner')">
+          <div class="shop-img-wrap" id="wrap-planner">
+            <div class="shop-placeholder-kr">기</div>
+            <img id="img-planner" loading="lazy" alt="Korean Digital Planners">
+            <div class="shop-upload-zone">
+              <div class="shop-upload-icon">+</div>
+              <div class="shop-upload-hint">Add image</div>
+            </div>
+            <input class="shop-file-input" type="file" accept="image/*" onchange="loadImg(this,'img-planner','wrap-planner')">
+          </div>
+          <div class="shop-card-name" data-notion="shop-name-1">Korean Digital Planners</div>
+          <div class="shop-card-tag" data-notion="shop-tag-1">GoodNotes · Notability · PDF</div>
+        </div>
+
+        <div class="shop-card" onclick="triggerUpload('img-merch')">
+          <div class="shop-img-wrap" id="wrap-merch">
+            <div class="shop-placeholder-kr">이</div>
+            <img id="img-merch" loading="lazy" alt="Iru Merch">
+            <div class="shop-upload-zone">
+              <div class="shop-upload-icon">+</div>
+              <div class="shop-upload-hint">Add image</div>
+            </div>
+            <input class="shop-file-input" type="file" accept="image/*" onchange="loadImg(this,'img-merch','wrap-merch')">
+          </div>
+          <div class="shop-card-name" data-notion="shop-name-2">Iru Merch</div>
+          <div class="shop-card-tag" data-notion="shop-tag-2">Totes · stickers · stationery</div>
+        </div>
+
+        <div class="shop-card" onclick="triggerUpload('img-sheets')">
+          <div class="shop-img-wrap" id="wrap-sheets">
+            <div class="shop-placeholder-kr">루</div>
+            <img id="img-sheets" loading="lazy" alt="Practice Sheets">
+            <div class="shop-upload-zone">
+              <div class="shop-upload-icon">+</div>
+              <div class="shop-upload-hint">Add image</div>
+            </div>
+            <input class="shop-file-input" type="file" accept="image/*" onchange="loadImg(this,'img-sheets','wrap-sheets')">
+          </div>
+          <div class="shop-card-name" data-notion="shop-name-3">Practice Sheets</div>
+          <div class="shop-card-tag" data-notion="shop-tag-3">Printable · PDF · all levels</div>
+        </div>
+
+        <div class="shop-card" onclick="triggerUpload('img-classes')">
+          <div class="shop-img-wrap" id="wrap-classes">
+            <div class="shop-placeholder-kr">한</div>
+            <img id="img-classes" loading="lazy" alt="Private Classes">
+            <div class="shop-upload-zone">
+              <div class="shop-upload-icon">+</div>
+              <div class="shop-upload-hint">Add image</div>
+            </div>
+            <input class="shop-file-input" type="file" accept="image/*" onchange="loadImg(this,'img-classes','wrap-classes')">
+          </div>
+          <div class="shop-card-name" data-notion="shop-name-4">Private Classes</div>
+          <div class="shop-card-tag" data-notion="shop-tag-4">1:1 · all levels · flexible</div>
+        </div>
+
+      </div>
+      <div class="scroll-arr right" onclick="scrollShop(1)" title="Next">›</div>
+    </div>
+  </section>
+
+  <!-- ═══ PRACTICE HUB — magazine spread ═══ -->
+  <section class="prac-sec" id="practice">
+
+    <div class="prac-masthead">
+      <div class="prac-masthead-left" data-notion="prac-masthead">Iru Korean · Practice & Tools</div>
+      <div class="prac-masthead-title">이루 연습</div>
+      <div class="prac-masthead-right">Seoul · 서울</div>
+    </div>
+    <div class="prac-rule"></div>
+
+    <div class="prac-body">
+
+      <!-- Left editorial column -->
+      <div class="prac-left">
+        <div class="prac-issue">Tools & exercises</div>
+        <div class="prac-pullquote" data-notion="prac-title">
+          Practice that<br><em>actually sticks.</em>
+        </div>
+        <div class="prac-pullquote-sub" data-notion="prac-desc">
+          Hundreds of original exercises, hand-built widgets, and real-language drills you won't find anywhere else.
+        </div>
+        <div class="prac-stats-v">
+          <div class="pstat-v">
+            <div class="pstat-n"><span>500+</span></div>
+            <div class="pstat-l">Exercises</div>
+          </div>
+          <div class="pstat-v">
+            <div class="pstat-n"><span>100%</span></div>
+            <div class="pstat-l">Original content</div>
+          </div>
+          <div class="pstat-v">
+            <div class="pstat-n"><span>Free</span></div>
+            <div class="pstat-l">Travel preview</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: three editorial rows -->
+      <div class="prac-right">
+        <div class="pc">
+          <div class="pc-left">
+            <div class="pc-eyebrow">Practice Hub</div>
+            <div class="pc-title">Grammar drills, vocab exercises & writing prompts</div>
+            <div class="pc-desc">Organised by level and section to match your exact study path. From fill-in-the-blank to full writing practice.</div>
+          </div>
+          <div class="pc-right">
+            <span class="pc-badge b-mem">Members</span>
+            <div class="pc-tags">
+              <span class="pc-tag">Fill in the blank</span>
+              <span class="pc-tag">Multiple choice</span>
+              <span class="pc-tag">Writing prompts</span>
+            </div>
+          </div>
+        </div>
+        <div class="pc">
+          <div class="pc-left">
+            <div class="pc-eyebrow">Iru's Special Widgets</div>
+            <div class="pc-title">Hand-built interactive tools found nowhere else</div>
+            <div class="pc-desc">Conjugation builders, particle trainers, TOPIK simulators — all original, all made by Iru in Seoul.</div>
+          </div>
+          <div class="pc-right">
+            <span class="pc-badge b-orig">Original</span>
+            <div class="pc-tags">
+              <span class="pc-tag">Conjugation</span>
+              <span class="pc-tag">Particle trainer</span>
+              <span class="pc-tag">TOPIK simulator</span>
+            </div>
+          </div>
+        </div>
+        <div class="pc">
+          <div class="pc-left">
+            <div class="pc-eyebrow">Travel Korean Tools</div>
+            <div class="pc-title">Phrase builders for your Seoul trip</div>
+            <div class="pc-desc">Clinic vocabulary, café ordering, market phrases — all available as a free preview before you subscribe.</div>
+          </div>
+          <div class="pc-right">
+            <span class="pc-badge b-free">Free preview</span>
+            <div class="pc-tags">
+              <span class="pc-tag">Phrase builder</span>
+              <span class="pc-tag">Clinic vocab</span>
+              <span class="pc-tag">No login</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prac-cta-bar">
+      <div class="prac-cta-bar-text">Exclusive to Iru Korean members</div>
+      <a href="#" class="prac-cta">Explore Practice Hub →</a>
+    </div>
+
+  </section>
+
+
+  <!-- ═══ NOTION WORKBOOK PROMO ═══ -->
+  <section class="workbook-sec" id="workbook">
+    <div class="workbook-left">
+      <div class="wb-eyebrow" data-notion="wb-eyebrow">Free with every membership</div>
+      <div class="wb-title" data-notion="wb-title">Your own <em>Notion<br>Korean Workbook.</em></div>
+      <p class="wb-desc" data-notion="wb-desc">When you subscribe, you get a personalised Notion workspace — not just a website. Your lessons, practice logs, vocab lists, and progress tracking all in one beautiful workbook, built for you.</p>
+      <a href="#" class="wb-cta" data-notion="wb-cta">Start learning in Notion →</a>
+    </div>
+    <div class="workbook-right">
+      <div class="wb-feature">
+        <div class="wb-icon">📓</div>
+        <div>
+          <div class="wb-feat-title" data-notion="wb-feat1-title">Your own Notion workspace</div>
+          <div class="wb-feat-desc" data-notion="wb-feat1-desc">A fully organised Korean study hub delivered to your Notion account the moment you subscribe. Not a website — your own editable space.</div>
+        </div>
+      </div>
+      <div class="wb-feature">
+        <div class="wb-icon">✏️</div>
+        <div>
+          <div class="wb-feat-title" data-notion="wb-feat2-title">Customised to your level</div>
+          <div class="wb-feat-desc" data-notion="wb-feat2-desc">Beginner to advanced — your workbook is pre-populated with the lessons and practice sheets that match where you are right now.</div>
+        </div>
+      </div>
+      <div class="wb-feature">
+        <div class="wb-icon">📊</div>
+        <div>
+          <div class="wb-feat-title" data-notion="wb-feat3-title">Track your own progress</div>
+          <div class="wb-feat-desc" data-notion="wb-feat3-desc">Built-in progress trackers, vocab logs, and study calendars. The workbook grows as you do — yours to keep, forever.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VISITING SEOUL — Seoul at dusk ═══ -->
+  <div class="travel">
+    <div class="travel-stars"></div>
+    <div class="travel-inner">
+      <div>
+        <div class="travel-label" data-notion="travel-label">Free preview — no account needed</div>
+        <div class="travel-title" data-notion="travel-title">Visiting <em>Seoul?</em><br>Get Travel Korean free.</div>
+        <div class="travel-sub" data-notion="travel-sub">Clinics, cafés, markets, transport — everything before you land.</div>
+      </div>
+      <a href="#" class="travel-cta" data-notion="travel-cta">Get it free ✈</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-logo">Iru Korean <span class="foot-kr">이루</span></div>
+    <ul class="foot-links"><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Contact</a></li></ul>
+    <div class="foot-copy" data-notion="footer-copy">© 2026 Iru Korean — Built with <span style="color:#e34">♥</span>, from Seoul</div>
+  </footer>
+
+</div>
+
+<script>
+/* Cursor */
+const cur=document.getElementById('cur'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+
+/* ═══ ORGANIC SVG CLOUD SYSTEM ═══
+   Flat-bottomed cumulus clouds — all paths close with a clean horizontal base. */
+const CLOUD_PATHS=[
+  /* Large 3-lobe — base at y=100, width=340 */
+  {w:340,h:110,vbH:112,
+   path:`M 0,100 C 0,80 12,68 26,68 C 24,50 36,36 54,32 C 68,16 90,10 110,18
+         C 128,8 154,4 172,16 C 190,6 216,8 228,24
+         C 248,14 272,20 276,42 C 290,44 302,58 300,76
+         C 298,90 286,100 274,100 L 0,100 Z`,
+   opacity:0.9,shadow:true},
+  /* Medium 2-lobe — base at y=80, width=240 */
+  {w:240,h:90,vbH:92,
+   path:`M 0,80 C 0,62 10,50 24,50 C 22,34 34,20 52,18
+         C 68,16 82,28 84,44 C 98,32 120,28 136,40
+         C 154,30 178,32 188,50 C 200,52 210,64 208,76
+         C 206,82 194,82 180,80 L 0,80 Z`,
+   opacity:0.86,shadow:true},
+  /* Wispy elongated — base at y=60, width=310 */
+  {w:310,h:70,vbH:72,
+   path:`M 0,60 C 0,46 8,36 20,36 C 20,22 30,12 46,12
+         C 60,12 72,22 72,36 C 86,24 106,20 122,32
+         C 138,20 162,18 178,30 C 196,20 222,22 232,38
+         C 248,36 260,46 258,58 L 0,60 Z`,
+   opacity:0.72,shadow:false},
+  /* Small puffy — base at y=76, width=180 */
+  {w:180,h:86,vbH:88,
+   path:`M 0,76 C 0,60 8,48 22,46 C 20,30 32,16 50,14
+         C 68,12 82,24 84,40 C 100,28 122,26 134,42
+         C 148,36 162,46 160,62 C 158,72 146,76 132,76 L 0,76 Z`,
+   opacity:0.84,shadow:true},
+  /* Large background wide — base at y=86, width=430 */
+  {w:430,h:98,vbH:100,
+   path:`M 0,86 C 0,68 12,56 28,56 C 26,40 38,26 58,22
+         C 74,14 96,18 108,32 C 122,18 150,14 170,26
+         C 188,14 214,12 232,26 C 252,12 282,14 296,30
+         C 316,22 342,28 348,48 C 364,46 378,58 374,74
+         C 372,82 358,86 344,86 L 0,86 Z`,
+   opacity:0.55,shadow:false},
+];
+
+const CLOUD_DEFS=[
+  [0, 18,  82,   0,   1.05],
+  [4, 5,  135, -60,   1.0],
+  [1, 42,  68, -25,   0.88],
+  [2, 58,  52, -18,   0.95],
+  [3, 14,  76, -42,   0.80],
+  [0, 32, 100, -55,   1.0],
+  [1, 65,  60, -12,   0.82],
+  [4, 0,  118, -88,   0.9],
+];
+
+function buildClouds(weatherClass){
+  const layer=document.getElementById('cloudLayer');
+  layer.innerHTML='';
+  document.querySelectorAll('style[data-clouds]').forEach(s=>s.remove());
+  const isStormy=weatherClass==='wx-rain';
+  const isNight=weatherClass==='wx-night';
+
+  CLOUD_DEFS.forEach((def,i)=>{
+    const [pi,yTop,dur,delay,scale]=def;
+    const cp=CLOUD_PATHS[pi];
+    let opacity=cp.opacity;
+    if(isStormy) opacity*=0.45;
+    if(isNight)  opacity*=0.12;
+
+    let fill=`rgba(255,255,255,${opacity})`;
+    let shadowFill='rgba(180,205,235,0.2)';
+    if(isStormy){fill=`rgba(148,162,175,${opacity*0.95})`;shadowFill='rgba(90,100,115,0.22)';}
+    if(weatherClass==='wx-snow'){fill=`rgba(238,244,254,${opacity})`;}
+
+    const ns='http://www.w3.org/2000/svg';
+    const svg=document.createElementNS(ns,'svg');
+    svg.setAttribute('viewBox',`0 0 ${cp.w} ${cp.vbH}`);
+    svg.setAttribute('width',cp.w*scale);
+    svg.setAttribute('height',cp.vbH*scale);
+    svg.style.cssText=`position:absolute;top:${yTop}px;will-change:transform;pointer-events:none;filter:blur(0.8px)`;
+
+    if(cp.shadow){
+      const sh=document.createElementNS(ns,'path');
+      sh.setAttribute('d',cp.path);
+      sh.setAttribute('fill',shadowFill);
+      sh.setAttribute('transform','translate(3,8)');
+      svg.appendChild(sh);
+    }
+    const p=document.createElementNS(ns,'path');
+    p.setAttribute('d',cp.path);
+    p.setAttribute('fill',fill);
+    svg.appendChild(p);
+
+    const kf=`cdrift${i}`;
+    const sx=-(cp.w*scale+100);
+    const ex=window.innerWidth+(cp.w*scale+100);
+    const st=document.createElement('style');
+    st.setAttribute('data-clouds','1');
+    st.textContent=`@keyframes ${kf}{from{transform:translateX(${sx}px)}to{transform:translateX(${ex}px)}}`;
+    document.head.appendChild(st);
+    svg.style.animation=`${kf} ${dur}s linear ${delay}s infinite`;
+    layer.appendChild(svg);
+  });
+}
+
+/* ═══ RAIN CANVAS ═══ */
+function startRain(){
+  const canvas=document.getElementById('rainCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=500;}
+  resize();window.addEventListener('resize',resize,{passive:true});
+  const drops=Array.from({length:200},()=>({
+    x:Math.random()*canvas.width,y:Math.random()*canvas.height,
+    len:Math.random()*16+6,speed:Math.random()*4+5,opacity:Math.random()*0.15+0.04
+  }));
+  function frame(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    drops.forEach(d=>{
+      ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-1.2,d.y+d.len);
+      ctx.strokeStyle=`rgba(155,175,200,${d.opacity})`;ctx.lineWidth=0.7;ctx.stroke();
+      d.y+=d.speed;if(d.y>canvas.height){d.y=-d.len;d.x=Math.random()*canvas.width;}
+    });requestAnimationFrame(frame);
+  }frame();
+}
+
+/* ═══ SEOUL WEATHER — Open-Meteo (free, CORS-safe, no API key) ═══ */
+/* wttr.in uses its own codes (113=clear, 116=partly cloudy, etc.)
+   open-meteo uses WMO standard codes (0=clear, 1=mainly clear, etc.) */
+const WTTR_MAP={
+  113:{label:'Clear sky',     cls:'',         icon:'☀️'},
+  116:{label:'Partly cloudy', cls:'',         icon:'⛅'},
+  119:{label:'Cloudy',        cls:'wx-cloudy',icon:'☁️'},
+  122:{label:'Overcast',      cls:'wx-cloudy',icon:'☁️'},
+  143:{label:'Mist',          cls:'wx-cloudy',icon:'🌫'},
+  248:{label:'Fog',           cls:'wx-cloudy',icon:'🌫'},
+  176:{label:'Light rain',    cls:'wx-rain',  icon:'🌦'},
+  263:{label:'Light drizzle', cls:'wx-rain',  icon:'🌦'},
+  266:{label:'Drizzle',       cls:'wx-rain',  icon:'🌧'},
+  293:{label:'Light rain',    cls:'wx-rain',  icon:'🌧'},
+  296:{label:'Rain',          cls:'wx-rain',  icon:'🌧'},
+  299:{label:'Rain',          cls:'wx-rain',  icon:'🌧'},
+  302:{label:'Heavy rain',    cls:'wx-rain',  icon:'🌧'},
+  305:{label:'Heavy rain',    cls:'wx-rain',  icon:'🌧'},
+  308:{label:'Heavy rain',    cls:'wx-rain',  icon:'🌧'},
+  317:{label:'Sleet',         cls:'wx-rain',  icon:'🌨'},
+  320:{label:'Sleet',         cls:'wx-rain',  icon:'🌨'},
+  323:{label:'Light snow',    cls:'wx-snow',  icon:'🌨'},
+  326:{label:'Snow',          cls:'wx-snow',  icon:'❄️'},
+  329:{label:'Snow',          cls:'wx-snow',  icon:'❄️'},
+  332:{label:'Heavy snow',    cls:'wx-snow',  icon:'❄️'},
+  335:{label:'Heavy snow',    cls:'wx-snow',  icon:'❄️'},
+  338:{label:'Heavy snow',    cls:'wx-snow',  icon:'❄️'},
+  353:{label:'Rain showers',  cls:'wx-rain',  icon:'🌦'},
+  356:{label:'Heavy showers', cls:'wx-rain',  icon:'🌧'},
+  359:{label:'Torrential',    cls:'wx-rain',  icon:'⛈'},
+  386:{label:'Thunderstorm',  cls:'wx-rain',  icon:'⛈'},
+  389:{label:'Thunderstorm',  cls:'wx-rain',  icon:'⛈'},
+  200:{label:'Thunderstorm',  cls:'wx-rain',  icon:'⛈'},
+};
+/* WMO standard codes for open-meteo fallback */
+const WMO_MAP={
+  0:{label:'Clear sky',cls:'',icon:'☀️'},     1:{label:'Mainly clear',cls:'',icon:'🌤'},
+  2:{label:'Partly cloudy',cls:'',icon:'⛅'}, 3:{label:'Overcast',cls:'wx-cloudy',icon:'☁️'},
+  45:{label:'Foggy',cls:'wx-cloudy',icon:'🌫'},48:{label:'Icy fog',cls:'wx-cloudy',icon:'🌫'},
+  51:{label:'Drizzle',cls:'wx-rain',icon:'🌦'},53:{label:'Drizzle',cls:'wx-rain',icon:'🌦'},55:{label:'Heavy drizzle',cls:'wx-rain',icon:'🌧'},
+  61:{label:'Light rain',cls:'wx-rain',icon:'🌧'},63:{label:'Rain',cls:'wx-rain',icon:'🌧'},65:{label:'Heavy rain',cls:'wx-rain',icon:'🌧'},
+  71:{label:'Light snow',cls:'wx-snow',icon:'🌨'},73:{label:'Snow',cls:'wx-snow',icon:'❄️'},75:{label:'Heavy snow',cls:'wx-snow',icon:'❄️'},
+  80:{label:'Showers',cls:'wx-rain',icon:'🌦'},81:{label:'Showers',cls:'wx-rain',icon:'🌧'},82:{label:'Heavy showers',cls:'wx-rain',icon:'⛈'},
+  95:{label:'Thunderstorm',cls:'wx-rain',icon:'⛈'},99:{label:'Thunderstorm',cls:'wx-rain',icon:'⛈'},
+};
+
+function applyWeather(tempC, feelsC, humidity, wx){
+  const hour=new Date().getHours();
+  const isNight=hour<6||hour>20;
+  const wxClass=isNight?'wx-night':wx.cls;
+  const wxIcon=isNight?'🌙':wx.icon;
+  document.getElementById('heroSky').className='hero '+wxClass;
+  document.getElementById('wxIcon').textContent=wxIcon;
+  document.getElementById('wxTemp').textContent=tempC+'°C';
+  document.getElementById('wxDesc').textContent=wx.label;
+  document.getElementById('wxFeel').textContent='Feels '+feelsC+'°C';
+  document.getElementById('wxHumid').textContent=humidity+'% humidity';
+  buildClouds(wxClass);
+  if(wxClass==='wx-rain') startRain();
+}
+
+async function loadSeoulWeather(){
+  /* Strategy 1: wttr.in (has CORS headers, uses its own codes) */
+  try{
+    const res=await fetch('https://wttr.in/Seoul?format=j1',{signal:AbortSignal.timeout(4000)});
+    if(!res.ok) throw new Error('wttr '+res.status);
+    const d=await res.json();
+    const cur=d.current_condition[0];
+    const code=parseInt(cur.weatherCode);
+    const wx=WTTR_MAP[code]||{label:'Clear sky',cls:'',icon:'☀️'};
+    applyWeather(parseInt(cur.temp_C), parseInt(cur.FeelsLikeC), cur.humidity, wx);
+    return;
+  }catch(e){ console.warn('wttr.in failed:',e.message); }
+
+  /* Strategy 2: open-meteo (designed for browser, no key, WMO codes) */
+  try{
+    const url='https://api.open-meteo.com/v1/forecast?latitude=37.5665&longitude=126.9780&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code&timezone=Asia%2FSeoul';
+    const res=await fetch(url,{signal:AbortSignal.timeout(4000)});
+    if(!res.ok) throw new Error('open-meteo '+res.status);
+    const d=await res.json();
+    const cur=d.current;
+    const code=parseInt(cur.weather_code);
+    const wx=WMO_MAP[code]||{label:'Clear sky',cls:'',icon:'☀️'};
+    applyWeather(Math.round(cur.temperature_2m), Math.round(cur.apparent_temperature), cur.relative_humidity_2m, wx);
+    return;
+  }catch(e){ console.warn('open-meteo failed:',e.message); }
+
+  /* Strategy 3: demo fallback so widget is never blank */
+  buildClouds('');
+  document.getElementById('wxTemp').textContent='20°C';
+  document.getElementById('wxDesc').textContent='Clear sky';
+  document.getElementById('wxFeel').textContent='Feels 19°C';
+  document.getElementById('wxHumid').textContent='55% humidity';
+}
+
+function scrollShop(dir){
+  const row=document.getElementById('shopRow');
+  const cardW=row.querySelector('.shop-card')?.offsetWidth||280;
+  row.scrollBy({left:dir*(cardW+12),behavior:'smooth'});
+}
+
+/* Defer weather to after first paint */
+if('requestIdleCallback' in window){requestIdleCallback(loadSeoulWeather)}else{setTimeout(loadSeoulWeather,1)}
+
+/* ═══ NOTION CONTENT LOADER ═══
+   Works with Cloudflare Pages (/content)
+   and Netlify (/.netlify/functions/content) automatically */
+async function loadNotionContent(){
+  /* Detect platform: Cloudflare Pages uses /content, Netlify uses /.netlify/functions/content */
+  const endpoints = ['/content', '/.netlify/functions/content'];
+  let map = null;
+  for(const url of endpoints){
+    try{
+      const res = await fetch(url);
+      if(res.ok){ map = await res.json(); break; }
+    }catch(e){}
+  }
+  if(!map) return; /* No CMS available — static defaults shown */
+  document.querySelectorAll('[data-notion]').forEach(el=>{
+    const key = el.getAttribute('data-notion');
+    if(map[key] !== undefined && map[key] !== ''){
+      el.innerHTML = map[key];
+    }
+  });
+}
+loadNotionContent();
+
+
+const LVL={'Beginner':'lvl-b','Intermediate':'lvl-i','Advanced':'lvl-a','TOPIK I':'lvl-t','TOPIK II':'lvl-t','All levels':'lvl-b','All':'lvl-b'};
+let activeS=null;
+
+const DATA={
+  basics:{emoji:'📚',name:'Korean Basics',filters:['All','Hangul','Pronunciation','Phrases','Numbers','Greetings'],lessons:[
+    {n:'01',t:'The Korean alphabet — consonants (자음)',d:'Master all 14 basic consonants: how they look, sound, and are written.',l:'Beginner',f:'Hangul'},
+    {n:'02',t:'The Korean alphabet — vowels (모음)',d:'Learn 10 basic vowels and how they combine into syllable blocks.',l:'Beginner',f:'Hangul'},
+    {n:'03',t:'Syllable blocks — how Korean is structured',d:'The iconic block structure of Korean syllables and how to read and write them.',l:'Beginner',f:'Hangul'},
+    {n:'04',t:'Your first greetings — 안녕하세요',d:'Hello, goodbye, thank you, sorry — formal and casual versions.',l:'Beginner',f:'Greetings'},
+    {n:'05',t:'Introducing yourself — 저는 이루예요',d:'Say your name, where you are from, and what you do in natural Korean.',l:'Beginner',f:'Phrases'},
+    {n:'06',t:'Numbers — sino-Korean (일, 이, 삼...)',d:'Count from 1 to 10,000 using the system for money, dates, and floors.',l:'Beginner',f:'Numbers'},
+  ]},
+  travel:{emoji:'✈️',name:'Travel Korean',filters:['All','Before you go','Dining','Shopping','Transport','Clinic & health'],lessons:[
+    {n:'01',t:'Airport arrival — immigration and baggage',d:'Everything you need from the plane to the exit.',l:'Beginner',f:'Before you go'},
+    {n:'02',t:'Hotel check-in — 체크인 부탁드려요',d:'Check in, request upgrades, ask about facilities.',l:'Beginner',f:'Before you go'},
+    {n:'03',t:'Ordering at a café — 아이스 아메리카노 주세요',d:'Seoul café culture decoded. Order confidently anywhere.',l:'Beginner',f:'Dining'},
+    {n:'04',t:'At a Korean restaurant — from menu to bill',d:'Read a menu, order food, ask about ingredients.',l:'Beginner',f:'Dining'},
+    {n:'05',t:'Taking the Seoul subway — 지하철',d:'Buy tickets, read signs, ask for directions.',l:'Beginner',f:'Transport'},
+    {n:'06',t:'K-beauty clinic vocabulary — 피부과',d:'Describe what you want, communicate with clinic staff.',l:'Intermediate',f:'Clinic & health'},
+  ]},
+  grammar:{emoji:'📖',name:'Korean Grammar',filters:['All','Particles','Verb endings','Tense','Conjunctions','Honorifics'],lessons:[
+    {n:'01',t:'Subject particle — 이/가 vs 은/는',d:'The most common source of confusion in Korean grammar.',l:'Beginner',f:'Particles'},
+    {n:'02',t:'Object particle — 을/를',d:'How to mark what is being acted upon.',l:'Beginner',f:'Particles'},
+    {n:'03',t:'Location particles — 에 and 에서',d:'Where something exists vs where an action happens.',l:'Beginner',f:'Particles'},
+    {n:'04',t:'Polite present tense — 아/어요',d:'Conjugate any Korean verb into the polite present.',l:'Beginner',f:'Verb endings'},
+    {n:'05',t:'Past tense — 았/었어요',d:'How to talk about what happened, including irregular verbs.',l:'Beginner',f:'Tense'},
+    {n:'06',t:'Future tense — ㄹ/을 거예요',d:'Express plans, intentions, and predictions naturally.',l:'Intermediate',f:'Tense'},
+  ]},
+  speaking:{emoji:'🗣️',name:'Korean Speaking',filters:['All','Dining','Shopping','Making friends','Daily life','Situations'],lessons:[
+    {n:'01',t:'Ordering at a café — 아메리카노 한 잔 주세요',d:'Everything you need to order confidently.',l:'Beginner',f:'Dining'},
+    {n:'02',t:'At a Korean restaurant — from menu to bill',d:'Read a menu, order food, ask about ingredients.',l:'Beginner',f:'Dining'},
+    {n:'03',t:'Small talk — 요즘 어때요?',d:'Keep a conversation going. Natural Korean filler phrases.',l:'Beginner',f:'Making friends'},
+    {n:'04',t:'Shopping — 얼마예요?',d:'Ask prices, request sizes, say what you like.',l:'Beginner',f:'Shopping'},
+    {n:'05',t:'Directions — 어떻게 가요?',d:'Ask how to get somewhere and navigate Seoul.',l:'Beginner',f:'Daily life'},
+    {n:'06',t:'At the pharmacy — 두통약 있어요?',d:'Describe symptoms and handle pharmacy interactions.',l:'Intermediate',f:'Situations'},
+  ]},
+  vocab:{emoji:'📝',name:'Korean Vocabulary',filters:['All','Food & drink','K-drama','Body & health','Time','Emotions'],lessons:[
+    {n:'01',t:'Korean food — 50 essential words',d:'From 김치 to 삼겹살. The food words you need every day.',l:'All levels',f:'Food & drink'},
+    {n:'02',t:'Café vocabulary — menu and ordering',d:'Every word on a Korean café menu.',l:'Beginner',f:'Food & drink'},
+    {n:'03',t:'K-drama expressions — what they actually mean',d:'The 30 most common K-drama phrases.',l:'Intermediate',f:'K-drama'},
+    {n:'04',t:'Body parts — 신체 부위',d:'Head to toe in Korean including clinic vocabulary.',l:'Beginner',f:'Body & health'},
+    {n:'05',t:'Time expressions — 어제, 오늘, 내일',d:'The full set of Korean time words used every day.',l:'Beginner',f:'Time'},
+    {n:'06',t:'Emotions — 기분 표현',d:'A rich vocabulary for feelings from 설레다 to 답답하다.',l:'Intermediate',f:'Emotions'},
+  ]},
+  advanced:{emoji:'🏋🏻‍♀️',name:'Advanced Korean',filters:['All','Complex grammar','Formal writing','Native patterns','Nuance'],lessons:[
+    {n:'01',t:'Indirect speech — 다고 하다 and variants',d:'Report what someone said, thought, or asked.',l:'Advanced',f:'Complex grammar'},
+    {n:'02',t:'Passive voice — 피동 완전 정복',d:'The four ways Korean forms passive sentences.',l:'Advanced',f:'Complex grammar'},
+    {n:'03',t:'Causative verbs — 사동 표현',d:'Make someone do something. Patterns native speakers use.',l:'Advanced',f:'Complex grammar'},
+    {n:'04',t:'Formal writing — 합쇼체 and written style',d:'The speech level used in news and official documents.',l:'Advanced',f:'Formal writing'},
+    {n:'05',t:'Native connectors — 는데, 더니, 길래',d:'The connective endings separating intermediate from advanced.',l:'Advanced',f:'Native patterns'},
+    {n:'06',t:'Expressing attitude — 겠, 더, 잖아',d:'The attitudinal endings that encode speaker stance.',l:'Advanced',f:'Nuance'},
+  ]},
+  topik:{emoji:'📋',name:'TOPIK Test',filters:['All','TOPIK I','TOPIK II','Reading','Listening','Writing'],lessons:[
+    {n:'01',t:'TOPIK I — test structure and strategy',d:'Full breakdown: format, timing, scoring, and strategies.',l:'TOPIK I',f:'TOPIK I'},
+    {n:'02',t:'TOPIK I Reading — question types 1 and 2',d:'First two question types with examples and answer logic.',l:'TOPIK I',f:'Reading'},
+    {n:'03',t:'TOPIK I Listening — following dialogues',d:'How to follow passages and predict answers.',l:'TOPIK I',f:'Listening'},
+    {n:'04',t:'TOPIK II — structure and scoring',d:'What levels 3–6 test and requirements for each level.',l:'TOPIK II',f:'TOPIK II'},
+    {n:'05',t:'TOPIK II Writing — 쓰기 완전 정복',d:'Writing section strategy: structure and scoring criteria.',l:'TOPIK II',f:'Writing'},
+    {n:'06',t:'TOPIK vocabulary — 500 most tested words',d:'Frequency analysis of TOPIK exams.',l:'TOPIK I',f:'TOPIK I'},
+  ]}
+};
+
+function sel(key,el){
+  if(activeS===key){
+    activeS=null;
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('tabContent').innerHTML=`<div class="panel-welcome"><div class="panel-welcome-title">Select a section above to browse lessons</div><div class="panel-welcome-sub">7 sections · 1,800+ lessons · all levels</div></div>`;
+    return;
+  }
+  activeS=key;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  render(key,'All');
+}
+
+function render(key,filter){
+  const d=DATA[key];
+  const list=filter==='All'?d.lessons:d.lessons.filter(l=>l.f===filter);
+  document.getElementById('tabContent').innerHTML=`
+    <div class="content-hd">
+      <div class="content-hd-left">
+        <span class="content-title">${d.emoji} ${d.name}</span>
+        <span class="content-total">${key==='travel'?'Free preview':'300 lessons'} · showing ${d.lessons.length} sample lessons</span>
+      </div>
+      <div class="ftabs">${d.filters.map(f=>`<button class="ftab${f===filter?' on':''}" onclick="render('${key}','${f}')">${f}</button>`).join('')}</div>
+    </div>
+    <div class="lesson-grid">
+      ${list.map(l=>`
+        <a class="lcard" href="#" onclick="return false">
+          <div class="l-num">Lesson ${l.n}</div>
+          <div class="l-title">${l.t}</div>
+          <div class="l-desc">${l.d}</div>
+          <div class="l-foot">
+            <span class="lvl ${LVL[l.l]||'lvl-b'}">${l.l}</span>
+            <div class="l-lock">${key==='travel'&&parseInt(l.n)<=3?'✓':'🔒'}</div>
+          </div>
+        </a>`).join('')}
+    </div>
+    <div class="content-ft">
+      <div class="content-ft-text"><strong>Ready to start?</strong> Unlock all lessons with a membership.</div>
+      <a href="#" class="act-primary" style="font-size:12px;padding:8px 20px">Start learning →</a>
+    </div>`;
+}
+
+function triggerUpload(imgId){
+  const inp=document.querySelector(`input[onchange*="${imgId}"]`);
+  if(inp)inp.click();
+}
+function loadImg(input,imgId,wrapId){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const img=document.getElementById(imgId);
+    const wrap=document.getElementById(wrapId);
+    img.src=e.target.result;img.style.display='block';
+    wrap.classList.add('loaded');
+  };
+  reader.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
