@@ -1566,6 +1566,27 @@ const DATA={
   ]}
 };
 
+/* ── Real lesson data from Notion (populated on load) ── */
+let NOTION_LESSONS = null;
+
+async function loadNotionLessons(){
+  try{
+    const res = await fetch('/lessons');
+    if(!res.ok) throw new Error('lessons API '+res.status);
+    NOTION_LESSONS = await res.json();
+    /* If a tab is already open, re-render it with real data */
+    if(activeS) render(activeS,'All');
+  }catch(e){
+    console.warn('Notion lessons unavailable, using samples:',e.message);
+  }
+}
+/* Load after first paint */
+if('requestIdleCallback' in window){
+  requestIdleCallback(loadNotionLessons);
+}else{
+  setTimeout(loadNotionLessons, 500);
+}
+
 function sel(key,el){
   if(activeS===key){
     activeS=null;
@@ -1580,15 +1601,59 @@ function sel(key,el){
 }
 
 function render(key,filter){
+  /* Use real Notion lessons if available, otherwise fall back to samples */
+  const notionLessons = NOTION_LESSONS?.[key];
+
+  if(notionLessons && notionLessons.length > 0){
+    renderNotion(key, notionLessons, filter);
+  } else {
+    renderSample(key, filter);
+  }
+}
+
+function renderNotion(key, lessons, filter){
+  const d = DATA[key];
+
+  /* Build section filter options from actual data */
+  const sections = ['All', ...new Set(lessons.map(l=>l.section).filter(Boolean))];
+  const filtered = filter==='All' ? lessons : lessons.filter(l=>l.section===filter);
+
+  document.getElementById('tabContent').innerHTML=`
+    <div class="content-hd">
+      <div class="content-hd-left">
+        <span class="content-title">${d.emoji} ${d.name}</span>
+        <span class="content-total">${filtered.length} lessons</span>
+      </div>
+      <div class="ftabs">${sections.map(s=>`<button class="ftab${s===filter?' on':''}" onclick="renderNotion('${key}',NOTION_LESSONS['${key}'],'${s}')">${s}</button>`).join('')}</div>
+    </div>
+    <div class="lesson-grid">
+      ${filtered.map(l=>`
+        <a class="lcard" href="#" onclick="return false">
+          <div class="l-num">Lesson ${l.n}</div>
+          <div class="l-title">${l.t}</div>
+          <div class="l-desc">${l.d||l.section}</div>
+          <div class="l-foot">
+            <span class="lvl ${LVL[l.l]||'lvl-b'}">${l.l}</span>
+            <div class="l-lock" style="color:${l.free?'#2d9a4e':'var(--mist)'}">${l.free?'✓':'🔒'}</div>
+          </div>
+        </a>`).join('')}
+    </div>
+    <div class="content-ft">
+      <div class="content-ft-text"><strong>Ready to start?</strong> Unlock all lessons with a membership.</div>
+      <a href="#" class="act-primary" style="font-size:12px;padding:8px 20px">Start learning →</a>
+    </div>`;
+}
+
+function renderSample(key,filter){
   const d=DATA[key];
   const list=filter==='All'?d.lessons:d.lessons.filter(l=>l.f===filter);
   document.getElementById('tabContent').innerHTML=`
     <div class="content-hd">
       <div class="content-hd-left">
         <span class="content-title">${d.emoji} ${d.name}</span>
-        <span class="content-total">${key==='travel'?'Free preview':'300 lessons'} · showing ${d.lessons.length} sample lessons</span>
+        <span class="content-total">Sample lessons · connect Notion for real content</span>
       </div>
-      <div class="ftabs">${d.filters.map(f=>`<button class="ftab${f===filter?' on':''}" onclick="render('${key}','${f}')">${f}</button>`).join('')}</div>
+      <div class="ftabs">${d.filters.map(f=>`<button class="ftab${f===filter?' on':''}" onclick="renderSample('${key}','${f}')">${f}</button>`).join('')}</div>
     </div>
     <div class="lesson-grid">
       ${list.map(l=>`
