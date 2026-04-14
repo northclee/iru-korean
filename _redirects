@@ -1,3 +1,0 @@
-# Cloudflare Pages _redirects
-# Serves index-iru-home.html when someone visits the root URL
-/   /index-iru-home.html   200
