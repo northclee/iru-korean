@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iru Korean — Content Admin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=DM+Mono:wght@300;400&family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Jost',sans-serif;background:#f6f8fc;color:#0a0e35;min-height:100vh}
+
+  /* ── Header ── */
+  .admin-header{
+    background:#0a0e35;color:#fff;
+    padding:16px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+    position:sticky;top:0;z-index:100;
+  }
+  .admin-header h1{font-family:'Cormorant',serif;font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .admin-header span{font-family:'DM Mono',monospace;font-size:10px;color:rgba(202,225,250,0.6);letter-spacing:.08em}
+  .status{font-family:'DM Mono',monospace;font-size:10px;padding:4px 12px;border-radius:20px;background:rgba(202,225,250,0.1);color:rgba(202,225,250,0.7)}
+  .status.ok{background:rgba(50,200,100,0.15);color:#6fda9e}
+  .status.err{background:rgba(255,80,80,0.15);color:#ff8080}
+
+  /* ── Layout ── */
+  .admin-body{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 53px)}
+
+  /* ── Sidebar ── */
+  .sidebar{background:#fff;border-right:1px solid #e4e8f0;overflow-y:auto;position:sticky;top:53px;height:calc(100vh - 53px)}
+  .sidebar-section{padding:8px 0;border-bottom:1px solid #f0f2f8}
+  .sidebar-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9ba3be;padding:10px 16px 4px}
+  .sidebar-item{
+    padding:8px 16px;cursor:pointer;
+    font-size:12px;color:#596183;
+    transition:background .1s,color .1s;
+    display:flex;align-items:center;gap:8px;
+  }
+  .sidebar-item:hover{background:#f6f8fc;color:#0a0e35}
+  .sidebar-item.active{background:#eef2ff;color:#0a0e35;font-weight:500}
+  .sidebar-item .key{font-family:'DM Mono',monospace;font-size:10px;color:#9ba3be}
+
+  /* ── Main content ── */
+  .main{padding:32px;overflow-y:auto}
+  .section-title{font-family:'Cormorant',serif;font-size:24px;font-weight:600;color:#0a0e35;margin-bottom:4px}
+  .section-sub{font-size:12px;color:#9ba3be;margin-bottom:24px;font-family:'DM Mono',monospace}
+
+  /* ── Key cards ── */
+  .keys-grid{display:grid;gap:16px}
+  .key-card{background:#fff;border:1px solid #e4e8f0;border-radius:12px;overflow:hidden;transition:box-shadow .2s}
+  .key-card:hover{box-shadow:0 4px 20px rgba(10,14,53,0.07)}
+  .key-card-header{
+    padding:12px 16px;background:#f8f9fd;
+    border-bottom:1px solid #e4e8f0;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .key-name{font-family:'DM Mono',monospace;font-size:11px;color:#0a0e35;font-weight:500}
+  .key-type{font-family:'DM Mono',monospace;font-size:9px;color:#9ba3be;letter-spacing:.08em;text-transform:uppercase}
+  .key-card-body{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .key-col-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#9ba3be;margin-bottom:8px}
+  .key-current{font-size:13px;color:#596183;line-height:1.6;min-height:28px}
+  .key-preview{font-size:13px;color:#0a0e35;line-height:1.6;min-height:28px}
+  .key-preview.title-style{font-family:'Cormorant',serif;font-size:20px;font-weight:600}
+  .key-preview.mono-style{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em}
+  .key-preview.url-style{font-family:'DM Mono',monospace;font-size:10px;color:#3b6fd4;word-break:break-all}
+  .not-set{color:#d4b8a0;font-style:italic;font-size:11px}
+
+  /* ── Copy button ── */
+  .copy-btn{
+    font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;
+    padding:3px 10px;border-radius:4px;border:1px solid #e4e8f0;
+    background:#fff;color:#9ba3be;cursor:pointer;
+    transition:background .1s,color .1s;
+  }
+  .copy-btn:hover{background:#0a0e35;color:#fff;border-color:#0a0e35}
+  .copy-btn.copied{background:#6fda9e;color:#fff;border-color:#6fda9e}
+
+  /* ── Loading ── */
+  .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;gap:12px;color:#9ba3be}
+  .spinner{width:28px;height:28px;border:2px solid #e4e8f0;border-top-color:#0a0e35;border-radius:50%;animation:spin .7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ── Instructions ── */
+  .instructions{background:#fff;border:1px solid #e4e8f0;border-radius:12px;padding:20px;margin-bottom:24px;font-size:13px;color:#596183;line-height:1.7}
+  .instructions strong{color:#0a0e35}
+  .instructions code{font-family:'DM Mono',monospace;font-size:11px;background:#f6f8fc;padding:1px 6px;border-radius:3px;color:#0a0e35}
+</style>
+</head>
+<body>
+
+<div class="admin-header">
+  <h1>이루 Content Admin</h1>
+  <div style="display:flex;align-items:center;gap:12px">
+    <span id="lastUpdated">Loading...</span>
+    <div class="status" id="statusBadge">Connecting...</div>
+  </div>
+</div>
+
+<div class="admin-body">
+  <div class="sidebar" id="sidebar">
+    <div class="loading"><div class="spinner"></div></div>
+  </div>
+  <div class="main" id="main">
+    <div class="loading"><div class="spinner"></div><span>Fetching Notion content...</span></div>
+  </div>
+</div>
+
+<script>
+/* ── Section definitions ── */
+const SECTIONS = [
+  { id:'nav',      label:'Nav & Logo',     icon:'🧭', keys:['nav-logo'] },
+  { id:'hero',     label:'Hero Banner',    icon:'🌅', keys:['hero-eyebrow','hero-title','hero-kr','hero-desc','hero-cta-primary','hero-cta-primary-url','hero-cta-ghost','hero-cta-ghost-url'] },
+  { id:'lessons',  label:'Lessons',        icon:'📚', keys:['lessons-chapter','lessons-title','lessons-note'] },
+  { id:'pricing',  label:'Pricing',        icon:'💰', keys:['pricing-eyebrow','pricing-title','pricing-sub','price-badge',
+    'price-tier-1','price-amount-1','price-per-1','price-desc-1','price-cta-1',
+    'price-f1-1','price-f2-1','price-f3-1','price-f4-1',
+    'price-tier-2','price-amount-2','price-per-2','price-desc-2','price-cta-2','price-cta-2-url',
+    'price-f1-2','price-f2-2','price-f3-2','price-f4-2','price-f5-2',
+    'price-tier-3','price-amount-3','price-per-3','price-desc-3','price-cta-3','price-cta-3-url',
+    'price-f1-3','price-f2-3','price-f3-3','price-f4-3'] },
+  { id:'workbook', label:'Notion Workbook',icon:'📓', keys:['wb-eyebrow','wb-title','wb-desc','wb-cta','wb-cta-url','wb-feat1-title','wb-feat1-desc','wb-feat2-title','wb-feat2-desc','wb-feat3-title','wb-feat3-desc'] },
+  { id:'planners', label:'Digital Planners',icon:'📅',keys:['planners-eyebrow','planners-title','planners-desc','planners-feat-1','planners-feat-2','planners-feat-3','planners-feat-4','planners-cta','planners-cta-url','planners-ghost','planners-ghost-url'] },
+  { id:'private',  label:'1:1 Lessons',    icon:'🎓', keys:['private-eyebrow','private-title','private-sub',
+    'private-type-1','private-title-1','private-price-1','private-desc-1','private-feat-1-1','private-feat-1-2','private-feat-1-3','private-book-1','private-book-1-url','private-pay-1','private-pay-1-url',
+    'private-type-2','private-title-2','private-price-2','private-desc-2','private-feat-2-1','private-feat-2-2','private-feat-2-3','private-feat-2-4','private-book-2','private-book-2-url','private-pay-2','private-pay-2-url',
+    'private-type-3','private-title-3','private-price-3','private-desc-3','private-feat-3-1','private-feat-3-2','private-feat-3-3','private-feat-3-4','private-book-3','private-book-3-url','private-pay-3','private-pay-3-url',
+    'private-note'] },
+  { id:'shop',     label:'Shop / Merch',   icon:'🛍️', keys:['shop-label','shop-name-1','shop-tag-1','shop-url-1','shop-name-2','shop-tag-2','shop-url-2','shop-name-3','shop-tag-3','shop-url-3','shop-name-4','shop-tag-4','shop-url-4'] },
+  { id:'practice', label:'Practice Hub',   icon:'🏋️', keys:['prac-masthead','prac-masthead-kr','prac-masthead-right','prac-title','prac-desc','prac-cta','prac-cta-url'] },
+  { id:'travel',   label:'Travel Korean',  icon:'✈️', keys:['travel-label','travel-title','travel-sub','travel-cta','travel-cta-url'] },
+  { id:'footer',   label:'Footer',         icon:'🔗', keys:['footer-logo','footer-copy','url-terms','url-privacy','url-contact'] },
+];
+
+/* ── Key style hints ── */
+const KEY_STYLES = {
+  'hero-title': 'title-style',
+  'wb-title': 'title-style',
+  'planners-title': 'title-style',
+  'private-title': 'title-style',
+  'pricing-title': 'title-style',
+  'lessons-title': 'title-style',
+};
+const URL_KEYS = k => k.endsWith('-url');
+const MONO_KEYS = k => k.includes('eyebrow') || k.includes('label') || k.includes('badge') || k.includes('type-') || k.includes('tier-') || k.includes('per-');
+
+let notionMap = {};
+let activeSection = 'hero';
+
+async function loadContent() {
+  try {
+    const res = await fetch('/content');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('json')) throw new Error('Not JSON — functions may not be deployed');
+    notionMap = await res.json();
+    if (notionMap.error) throw new Error(notionMap.error);
+
+    const keyCount = Object.keys(notionMap).length;
+    document.getElementById('statusBadge').textContent = `${keyCount} keys loaded`;
+    document.getElementById('statusBadge').className = 'status ok';
+    document.getElementById('lastUpdated').textContent = `Updated ${new Date().toLocaleTimeString()}`;
+    buildSidebar();
+    showSection('hero');
+  } catch(e) {
+    document.getElementById('statusBadge').textContent = 'Error: ' + e.message;
+    document.getElementById('statusBadge').className = 'status err';
+    document.getElementById('main').innerHTML = `<div style="padding:32px;color:#ff8080;font-family:DM Mono,monospace;font-size:12px">
+      ⚠️ Could not load content: ${e.message}<br><br>
+      Make sure you're visiting this page from <strong>irukorean.com/admin.html</strong> so the /content function is reachable.
+    </div>`;
+  }
+}
+
+function buildSidebar() {
+  const sb = document.getElementById('sidebar');
+  sb.innerHTML = SECTIONS.map(s => {
+    const filled = s.keys.filter(k => notionMap[k]).length;
+    const total = s.keys.length;
+    const pct = Math.round(filled/total*100);
+    return `<div class="sidebar-item ${s.id===activeSection?'active':''}" onclick="showSection('${s.id}')">
+      <span style="font-size:16px">${s.icon}</span>
+      <div style="flex:1">
+        <div>${s.label}</div>
+        <div style="font-family:DM Mono,monospace;font-size:9px;color:${pct===100?'#6fda9e':'#9ba3be'};margin-top:2px">${filled}/${total} keys set</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function showSection(id) {
+  activeSection = id;
+  buildSidebar();
+  const sec = SECTIONS.find(s => s.id === id);
+  if (!sec) return;
+
+  const main = document.getElementById('main');
+  const missingKeys = sec.keys.filter(k => !notionMap[k]);
+
+  main.innerHTML = `
+    <div class="section-title">${sec.icon} ${sec.label}</div>
+    <div class="section-sub">NOTION KEYS FOR THIS SECTION · ${sec.keys.length} TOTAL</div>
+
+    <div class="instructions">
+      <strong>How to edit:</strong> Open your <code>Iru Korean — Page Content</code> database in Notion. 
+      Find the row with the matching <strong>Key</strong> name and edit the <strong>Value</strong> column.
+      Changes appear on the website within ~5 minutes (cache). Use <code>Cmd+B</code> for <strong>bold</strong>, <code>Cmd+I</code> for <em>italic</em>.
+      ${missingKeys.length > 0 ? `<br><br>⚠️ <strong>${missingKeys.length} keys not yet in Notion:</strong> ${missingKeys.map(k=>`<code>${k}</code>`).join(', ')}` : '<br><br>✅ All keys are set in Notion!'}
+    </div>
+
+    <div class="keys-grid">
+      ${sec.keys.map(key => {
+        const value = notionMap[key] || '';
+        const isUrl = URL_KEYS(key);
+        const isMono = MONO_KEYS(key);
+        const styleClass = KEY_STYLES[key] || (isUrl ? 'url-style' : isMono ? 'mono-style' : '');
+        return `
+          <div class="key-card">
+            <div class="key-card-header">
+              <span class="key-name">${key}</span>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="key-type">${isUrl ? 'URL' : isMono ? 'label' : 'text'}</span>
+                <button class="copy-btn" onclick="copyKey('${key}', this)">Copy key</button>
+              </div>
+            </div>
+            <div class="key-card-body">
+              <div>
+                <div class="key-col-label">Notion value</div>
+                <div class="key-current">${value || '<span class="not-set">Not set in Notion</span>'}</div>
+              </div>
+              <div>
+                <div class="key-col-label">Renders as</div>
+                <div class="key-preview ${styleClass}">${value || '<span class="not-set">Will show default</span>'}</div>
+              </div>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>
+  `;
+}
+
+function copyKey(key, btn) {
+  navigator.clipboard.writeText(key);
+  btn.textContent = 'Copied!';
+  btn.className = 'copy-btn copied';
+  setTimeout(() => { btn.textContent = 'Copy key'; btn.className = 'copy-btn'; }, 1500);
+}
+
+loadContent();
+/* Refresh every 30 seconds */
+setInterval(loadContent, 30000);
+</script>
+</body>
+</html>
